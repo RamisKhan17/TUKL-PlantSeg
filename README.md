@@ -4,7 +4,7 @@ This repository contains the training and inference code for both **binary** and
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Model-Training/
@@ -32,20 +32,20 @@ Model-Training/
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
-| Package | Purpose |
-|---|---|
-| `torch` / `torchvision` | Deep learning framework |
+| Package                       | Purpose                               |
+| ----------------------------- | ------------------------------------- |
+| `torch` / `torchvision`       | Deep learning framework               |
 | `segmentation-models-pytorch` | Architectures (DeepLabV3+, FPN, etc.) |
-| `albumentations` | Image augmentation |
-| `torchmetrics` | Evaluating multiclass metrics |
-| `patchify` | Tiling images into patches |
-| `Pillow` | Image I/O |
-| `numpy` | Array operations |
-| `matplotlib` | Visualization |
-| `pytorch-grad-cam` | Grad-CAM explainability |
-| `wandb` | Logging and tracking experiments |
+| `albumentations`              | Image augmentation                    |
+| `torchmetrics`                | Evaluating multiclass metrics         |
+| `patchify`                    | Tiling images into patches            |
+| `Pillow`                      | Image I/O                             |
+| `numpy`                       | Array operations                      |
+| `matplotlib`                  | Visualization                         |
+| `pytorch-grad-cam`            | Grad-CAM explainability               |
+| `wandb`                       | Logging and tracking experiments      |
 
 Install the dependencies:
 
@@ -56,7 +56,7 @@ pip install torch torchvision segmentation-models-pytorch albumentations \
 
 ---
 
-## 🚀 Usage
+## Usage
 
 > **Note:** Make sure you set your paths in the scripts properly. The main scripts expect datasets to be under the `Data/` directory relative to the `Model-Training` root. Run the scripts from the `Model-Training` folder (e.g., `python binary/train.py`).
 
@@ -74,7 +74,7 @@ pip install torch torchvision segmentation-models-pytorch albumentations \
 
 ---
 
-## 📝 Notes
+## Notes
 
 - Large files, directories like `Data/`, `models/`, `saved_images/`, and cache folders are tracked in `.gitignore` and are not pushed to the repository. Ensure you populate the `Data` directory properly with `.jpg` images and corresponding `.png` masks before executing any scripts.
 - The binary dataset relies on a `patching.py` and `Unpatching.py` strategy to split very large images, while multiclass resizes directly based on `DataLoading.py` parameters.
