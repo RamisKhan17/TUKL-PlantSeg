@@ -72,6 +72,27 @@ pip install torch torchvision segmentation-models-pytorch albumentations \
 - **Evaluation:** Run `python multiclass/test.py`. Inference utilizes 4-way Test-Time Augmentation (TTA) and outputs mIoU and per-class metrics.
 - **Prediction Notebook:** `multiclass/predict.ipynb` provides an interactive way to run predictions and visualize the multi-class outputs.
 
+## Multi-Class Experimental Results
+
+Model evaluation was tracked via Weights & Biases (W&B) across 116 plant disease classes, benchmarking DeepLabV3+ against a Feature Pyramid Network (FPN) architecture.
+
+### Performance Comparison
+
+| Model Architecture | Backbone Encoder | Peak Validation mIoU | Peak Validation Accuracy |
+| :----------------- | :--------------- | :------------------: | :----------------------: |
+| **DeepLabV3+**     | EfficientNet-B3  |        ~0.33         |           ~46%           |
+| **FPN**            | ResNet-50        |        ~0.34         |           ~44%           |
+
+### Validation Trajectories (W&B)
+
+#### mIoU
+
+![W&B Multi-Class Validation mIoU](results/multiclass_miou.png)
+
+#### mAccuracy
+
+![W&B Multi-Class Validation mAccuracy](results/multiclass_macc.png)
+
 ---
 
 ## Notes
